@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)https://fiddle.jshell.net/_display/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title></title>
+  
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script type="text/javascript" src="./dummy.js.download"></script>
+
+    <link rel="stylesheet" type="text/css" href="./result-light.css">
+
+      <script type="text/javascript" src="./axios.js.download"></script>
+
+  <style id="compiled-css" type="text/css">
+      
+  </style>
+
+
+  <!-- TODO: Missing CoffeeScript 2 -->
+
+  <script type="text/javascript">//<![CDATA[
+
+    window.onload=function(){
+      
+http://carbonads.net/?utm_source=jsfiddlenet&utm_medium=ad_via_link&utm_campaign=in_unit&utm_term=carbon
+
+    }
+
+  //]]></script>
+
+<script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script></head>
+<body>
+    
+
+<title>Movies and Strike</title>
+
+
+<h1>
+Movies list
+</h1>
+
+<button onclick="getMovie()">
+Get Movies
+</button>
+<ul id="list">
+<li id="but0" style="text-decoration: line-through;">the fault in our stars<button id="but0">Watched</button></li><li id="but1">Captain Marvel<button id="but1">Watched</button></li><li id="but2">Shutter Island<button id="but2">Watched</button></li></ul>
+
+<script>
+var value= true;
+
+function strike(id)
+{
+document.getElementById(id).style="text-decoration: line-through";
+}
+async function getMovie(){
+if (value == true)
+{
+try{
+var Data= await axios.get('http://localhost:3000/movies')
+for( var i= 0; i<Data.data.length; i++)
+{
+
+var movieName = document.createElement('li');
+
+movieName.innerHTML= Data.data[i].name;
+movieName.id="but"+i
+
+var click = document.createElement('button');
+click.id="but"+i
+console.log(click.id);
+click.innerHTML = "Watched";
+click.onclick = function(){
+
+strike(this.id)};
+
+
+
+movieName.appendChild(click)
+
+
+document.getElementById("list").appendChild(movieName);
+flag = false;
+
+
+}
+}
+catch(err)
+{
+console.log('e', err);
+}
+}
+}
+
+</script>
+
+
+
+  
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: ""
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+
+
+</body></html>

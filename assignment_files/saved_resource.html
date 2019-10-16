@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://jsfiddle.net/BijinaRegmi/mw0ayx3g/embedded/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    
+    <meta http-equiv="edit-Type" edit="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JSFiddle</title>
+
+      <meta name="robots" content="index, follow">
+      <meta name="googlebot" content="index, follow">
+
+      <script src="./highlight.pack.js.download"></script>
+      <script src="./embed.js.download"></script>
+      <link rel="stylesheet" media="screen" href="./embed-light.css">
+
+      <script type="text/javascript">
+        var height;
+        var force_height = null;
+        var slug = "mw0ayx3g";
+        var show_src = "//fiddle.jshell.net/BijinaRegmi/mw0ayx3g/show/light/";
+        var resize_element_counter = 0;
+        var shell_edit_url = "/BijinaRegmi/mw0ayx3g/light/";
+
+      </script>
+
+    <link rel="stylesheet" media="screen" href="./css">
+
+    <style type="text/css" media="screen">
+    </style>
+
+  <script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script></head>
+  <body>
+    <div id="wrapper">
+        <header>
+          <h1><a href="https://jsfiddle.net/BijinaRegmi/mw0ayx3g/?utm_source=website&amp;utm_medium=embed&amp;utm_campaign=mw0ayx3g" target="_blank">Edit in JSFiddle</a></h1>
+          <div id="actions">
+            <ul class="normalRes">
+                <li class="&quot;active&quot;">
+                  <a data-trigger-type="js" href="https://jsfiddle.net/BijinaRegmi/mw0ayx3g/embedded/#JavaScript">JavaScript</a>
+                </li>
+                <li>
+                  <a data-trigger-type="html" href="https://jsfiddle.net/BijinaRegmi/mw0ayx3g/embedded/#HTML">HTML</a>
+                </li>
+                <li>
+                  <a data-trigger-type="css" href="https://jsfiddle.net/BijinaRegmi/mw0ayx3g/embedded/#CSS">CSS</a>
+                </li>
+                <li>
+                  <a data-trigger-type="result" href="https://jsfiddle.net/BijinaRegmi/mw0ayx3g/embedded/#Result">Result</a>
+                </li>
+                <li>
+                  <a data-trigger-type="resources" href="https://jsfiddle.net/BijinaRegmi/mw0ayx3g/embedded/#Resources">Resources</a>
+                </li>
+            </ul>
+            <div class="hl" style="left: 0px; width: 81.0938px;"></div>
+          </div>
+        </header>
+
+        <div id="tabs">
+              <pre class="tCont active hljs javascript">http:<span class="hljs-comment">//carbonads.net/?utm_source=jsfiddlenet&amp;utm_medium=ad_via_link&amp;utm_campaign=in_unit&amp;utm_term=carbon</span></pre>
+              <pre class="tCont hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Movies and Strike<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>
+Movies list
+<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>= <span class="hljs-string">"getMovie()"</span>&gt;</span>
+Get Movies
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>= <span class="hljs-string">"list"</span> &gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+<span class="hljs-keyword">var</span> value= <span class="hljs-literal">true</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">strike</span>(<span class="hljs-params">id</span>)
+</span>{
+<span class="hljs-built_in">document</span>.getElementById(id).style=<span class="hljs-string">"text-decoration: line-through"</span>;
+}
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getMovie</span>(<span class="hljs-params"></span>)</span>{
+<span class="hljs-keyword">if</span> (value == <span class="hljs-literal">true</span>)
+{
+<span class="hljs-keyword">try</span>{
+<span class="hljs-keyword">var</span> Data= <span class="hljs-keyword">await</span> axios.get(<span class="hljs-string">'http://localhost:3000/movies'</span>)
+<span class="hljs-keyword">for</span>( <span class="hljs-keyword">var</span> i= <span class="hljs-number">0</span>; i&lt;Data.data.length; i++)
+{
+
+<span class="hljs-keyword">var</span> movieName = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'li'</span>);
+
+movieName.innerHTML= Data.data[i].name;
+movieName.id=<span class="hljs-string">"but"</span>+i
+
+<span class="hljs-keyword">var</span> click = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'button'</span>);
+click.id=<span class="hljs-string">"but"</span>+i
+<span class="hljs-built_in">console</span>.log(click.id);
+click.innerHTML = <span class="hljs-string">"Watched"</span>;
+click.onclick = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+
+strike(<span class="hljs-keyword">this</span>.id)};
+
+
+
+movieName.appendChild(click)
+
+
+<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"list"</span>).appendChild(movieName);
+flag = <span class="hljs-literal">false</span>;
+
+
+}
+}
+<span class="hljs-keyword">catch</span>(err)
+{
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'e'</span>, err);
+}
+}
+}
+
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></pre>
+              <pre class="tCont hljs"></pre>
+              <div class="tCont result " id="result"></div>
+              <div class="tCont resources " id="resources">
+                <h3>External resources loaded into this fiddle:</h3>
+                <ul>
+                    <li><a href="https://unpkg.com/axios@0.16.2/dist/axios.js" target="_blank">axios.js</a></li>
+                </ul>
+              </div>
+        </div>
+    </div>
+  
+
+</body></html>
